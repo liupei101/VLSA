@@ -21,6 +21,17 @@
 
 *in progress*
 
+## 👩‍💻 Running the Code
+
+Using the following command to load a experiment configuration and train the model (5-fold cross-validation):
+```bash
+python3 main.py --config config/IFMLE/tcga_blca/cfg_vlsa_conch.yaml --handler VLSA --multi_run
+```
+
+All important arguments are explained in `config/IFMLE/tcga_blca/cfg_vlsa_conch.yaml`. 
+
+We advocate open-source research. Our training logs of `VLSA` can be accessed at [Google Drive](https://drive.google.com/drive/folders/18_N2_fNduFcXnxQOtbfP07zNJ91PU1hJ?usp=drive_link). 
+
 ## 🔥 Awesome VLM Papers
 
 **Vision-Language Foundation Models for Computational Pathology**:
