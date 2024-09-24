@@ -1,0 +1,131 @@
+task: vlsa
+cuda_id: 1
+seed: 42
+
+wandb_dir: /home/user/repo/VLSA
+wandb_prj: VLSA-IFMLE
+save_path: ./result/exp-ifmle/{0}-VLSA-CONCH
+save_prediction: True
+eval_training_loader_per_epoch: False
+ckpt_for_eval: last # last / best
+num_shot: [-1] # active if num_shot >= 0
+
+# data loading
+dataset_name: ['tcga_blca']
+path_patch: /{1}/ExpData/{0}/tiles-20x-s448/feats-CONCH-vl-proj/pt_files
+path_coord: /{1}/ExpData/{0}/tiles-20x-s448/patches
+path_table: ./data_split/5foldcv/{0}/mahmoodlab_{0}_survival.csv
+data_mode: patch
+path_cluster: null
+path_graph: null
+feat_format: pt
+time_format: interval # 'origin', 'ratio', 'quantile', 'interval'
+time_bins: null # sqrt(num_events), automatically filled
+data_split_path: ./data_split/5foldcv/{0}/splits_{2}.csv
+data_split_seed: [0, 1, 2, 3, 4]
+
+# network architecture
+arch: VLSA
+path_clip_model: /NAS02/Others/pretrained-models
+init_wt: False
+net_output_converter: softmax # use to convert prediction
+model_saver_module_filter: prompt_encoder # filter this module when saving the model
+
+# API dependency
+vlsa_api: CONCH # HF (HuggingFace) / CLIP (github.com/openai/clip) / CONCH (mahmoodlab/CONCH)
+
+# logit_scale
+vlsa_frozen_logit_scale: False
+
+# [Vision] MIL encoder
+vlsa_img_encoder_name: VLFAN # VLFAN / DeepMIL / DSMIL / TransMIL
+vlsa_img_encoder_frozen: False
+vlsa_img_encoder_dim_in: 512
+vlsa_img_encoder_dim_hid: 256
+vlsa_img_encoder_use_feat_proj: False
+vlsa_img_encoder_drop_rate: 0.25
+vlsa_img_encoder_pred_head: default # default (nn.Linear) / Adapter / EAdapter
+vlsa_img_encoder_dim_reduction: 4 # active only when `pred_head` = Adapter
+vlsa_img_encoder_keep_ratio: 0.8 # active only when `pred_head` = Adapter
+
+# [Vision] VLFAN: query settings
+vlsa_img_encoder_query: ['Text'] # Parameter / Text 
+vlsa_img_encoder_num_query: null # filled automatically
+vlsa_img_encoder_query_pooling: mean # mean / max / weight / attention / gated_attention
+vlsa_img_encoder_gated_query: False
+# [Vision] VLFAN: Text-based query settings
+vlsa_img_encoder_query_text_method: ['TaskRes'] # ['default', 'TaskRes', 'Adapter']
+vlsa_img_encoder_query_text_res_ratio: [0.5] # active for TaskRes
+vlsa_img_encoder_query_text_dim_reduction: 4 # active for Adapter
+vlsa_img_encoder_query_text_keep_ratio: 0.8 # active for Adapter
+vlsa_img_encoder_query_text_load_path: 'tools/survival_text_prototypes.json' # null / 'tools/survival_text_prototypes.json'
+vlsa_img_encoder_query_text_load_idx: '{0}_0' # the index of context in `text_load_path` to use
+
+# [Text] Text encoder
+vlsa_txt_encoder_name: mahmoodlab/conch # 'vinid/plip', 'openai/clip-vit-base-patch32', 'mahmoodlab/conch'
+vlsa_txt_encoder_frozen: True
+
+# [Text] Prompt Learning
+vlsa_pmt_learner_name: CoOp # CoOp / Adapter
+vlsa_pmt_learner_pretrained: False # if use the text prompts pretrained by CoOp
+
+# [Text] CoOp-based prompt learning
+vlsa_pmt_learner_coop_ckpt: null # null if not pretrained
+vlsa_pmt_learner_coop_method: ['rank'] # plain / rank
+vlsa_pmt_learner_coop_num_ranks: null # equals to time_bins, aotumatically filled
+vlsa_pmt_learner_coop_num_base_ranks: 4
+vlsa_pmt_learner_coop_num_tokens_per_rank: 4
+vlsa_pmt_learner_coop_num_context_tokens: 8
+vlsa_pmt_learner_coop_rank_tokens_position: tail # "tail", "front", "middle"
+vlsa_pmt_learner_coop_init_prompt_path: 'tools/survival_prompts.json' # null / 'tools/survival_prompts.json'
+vlsa_pmt_learner_coop_init_prompt_rank_idx: 0 # the index of rank names in `init_prompt_path`
+vlsa_pmt_learner_coop_init_prompt_context_idx: 0 # the index of context in `init_prompt_path`
+vlsa_pmt_learner_coop_rank_specific_context: False # True / False
+vlsa_pmt_learner_coop_frozen_context_embeds: False 
+vlsa_pmt_learner_coop_frozen_rank_embeds: False 
+
+# [Text] Adapter-based prompt learning
+vlsa_pmt_learner_adapter_method: default # default / Adapter / TaskRes
+vlsa_pmt_learner_adapter_num_ranks: null # equals to time_bins, aotumatically filled
+vlsa_pmt_learner_adapter_res_ratio: 0.5 # active for TaskRes
+vlsa_pmt_learner_adapter_dim_reduction: 4 # active for Adapter
+vlsa_pmt_learner_adapter_keep_ratio: 0.8 # active for Adapter
+vlsa_pmt_learner_adapter_init_prompt_path: 'tools/survival_template_prompts.json' # null / 'tools/survival_template_prompts.json'
+vlsa_pmt_learner_adapter_init_prompt_rank_idx: 0 # the index of rank names in `init_prompt_path`
+vlsa_pmt_learner_adapter_init_prompt_context_idx: 0 # the index of context in `init_prompt_path`
+
+# training loss
+loss_type: SurvIFMLE-SurvEMD # use XXX-XXX-XXX to configure multi-loss
+loss_survifmle_weight: 1.0
+loss_survemd_weight: 1.0
+loss_survemd_p: 2
+
+# evaluator
+evaluator: VL-IF # Reg / NLL / Cox / VL
+
+# optimizer
+opt_name: adam
+opt_lr: 0.0002
+opt_weight_decay: 0.00001
+
+#training
+epochs: 10
+batch_size: 1
+bp_every_batch: 32
+num_workers: 4
+
+# Early Stopping
+es: False
+es_patience: 20
+es_warmup: 0
+es_verbose: True
+es_start_epoch: 0
+monitor_metrics: loss # loss / c_index
+
+# LR Scheduler
+lrs: False
+lrs_factor: 0.5
+lrs_patience: 10
+
+# In a test mode
+test: False

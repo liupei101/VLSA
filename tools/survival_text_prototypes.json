@@ -1,0 +1,59 @@
+{
+    "tcga_brca_0": [
+        "The dimensions of the tumor observed on the slide.",
+        "The boundary between the tumor and surrounding tissue.",
+        "The differentiation of tumor cells.",
+        "Presence of tumor cells within lymphatic and blood vessels.",
+        "Visual confirmation of metastasis in lymph nodes, seen as clusters of tumor cells.",
+        "The appearance of tumor cells, including their size, shape, and nuclear features.",
+        "Areas within the tumor where cells have died, typically due to insufficient blood supply.",
+        "The characteristics of the tissue surrounding the tumor, such as fibrosis (desmoplasia) and immune cell infiltration.",
+        "Tumor cells surrounding or invading nerves.",
+        "Different patterns of tumor growth and cell arrangement, which vary among subtypes such as ductal, lobular, and mucinous carcinoma."
+    ],
+    "tcga_luad_0": [
+        "The degree of cellular differentiation within the tumor.",
+        "The dimensions of the tumor mass within the tissue section, often measured in terms of its diameter or extent.",
+        "The appearance of tumor borders within the tissue.",
+        "The characteristics of tumor cell nuclei, such as size, shape, and staining pattern.",
+        "The presence of actively dividing cells, identified by the presence of mitotic figures within the tumor tissue.",
+        "Areas of tissue death within the tumor mass.",
+        "The overall arrangement and growth pattern of tumor cells within the tissue.",
+        "The presence of tumor cells within lymphatic or blood vessels."
+    ],
+    "tcga_blca_0": [
+        "Abnormalities in the size, shape, and organization of tumor cells. High degrees of atypia are associated with more aggressive tumors.",
+        "Variation in the size and shape of the nuclei within tumor cells. Pronounced pleomorphism typically indicates a higher grade and more aggressive cancer.",
+        "The presence and frequency of cell division figures (mitoses) within the tumor. High mitotic activity suggests rapid tumor growth and a poorer prognosis.",
+        "The structural arrangement of the tumor, such as solid or mixed patterns.",
+        "Tumor cells invade deep into the bladder wall layers, especially into detrusor muscle or muscularis propria, perivesical fat and beyond.",
+        "Tumor cells within blood vessels or lymphatic channels.",
+        "Areas of dead (necrotic) tumor cells within the tissue. Necrosis often appears as regions lacking viable cells and can indicate rapid tumor growth outpacing its blood supply.",
+        "Tumor cells surrounding or invading nerves.",
+        "Dense fibrous or connective tissue growth around the tumor indicates an aggressive response to the tumor, often seen in high-grade cancers.",
+        "Tumor cells penetrate the surrounding stroma, muscle, or other tissues, lack of a clear demarcation between the tumor and the normal tissue, known as poorly defined tumor margins.",
+        "Formation of new blood vessels within the tumor, necessary for tumor growth and spread. High levels of angiogenesis indicate a more aggressive tumor.",
+        "Presence of areas of flat, high-grade, non-invasive cancer, known as carcinoma in situ, identified by high-grade cellular atypia, disorganized epithelial structure, increased and atypical mitotic activity, loss of normal epithelial architecture, and absence of umbrella cells."
+    ],
+    "tcga_gbmlgg_0": [
+        "High cellular density indicates a large number of closely packed cells, suggesting rapid tumor growth and aggressive behavior.",
+        "The abnormal appearance of cell nuclei, characterized by variations in size, shape, and staining intensity. Higher nuclear atypia indicates more aggressive tumor cells with significant genetic abnormalities.",
+        "Cells undergoing division (mitosis) can be identified by the presence of mitotic figures. A higher number of mitotic figures points to increased tumor cell proliferation and aggressiveness.",
+        "Areas of dead tumor cells, often surrounded by viable tumor cells. Necrosis is a hallmark of high-grade tumors and is associated with poor oxygen supply and rapid tumor growth. Pseudopalisading necrosis features rows of tumor cells lining the necrotic areas.",
+        "The abnormal and excessive growth of small blood vessels within the tumor. This indicates the tumor’s ability to stimulate new blood vessel formation (angiogenesis), which supports its rapid growth and spread.",
+        "Tumor cells diffusely infiltrate into normal brain tissue, identified by scattered tumor cells within normal brain tissue, unclear boundaries between tumor and normal tissue, and a disrupted normal tissue architecture.",
+        "Tumor cells arranged in a palisading pattern around necrotic areas. This feature is characteristic of Glioblastoma and indicates aggressive tumor behavior and rapid cell turnover."
+    ],
+    "tcga_ucec_0": [
+        "The variation in size, shape, and chromatin pattern of cell nuclei. High-grade nuclei appear larger, irregular, and darker due to increased chromatin (hyperchromasia). Prominent nucleoli may also be visible.",
+        "The number of mitotic figures (cells undergoing division) per high-power field. High mitotic activity indicates rapid cell proliferation, which is a sign of tumor aggressiveness.",
+        "The structural pattern of the tumor, including gland formation and architectural complexity. Poorly differentiated tumors may show solid, cribriform, or papillary patterns.",
+        "The extent of the tumor's penetration into surrounding tissues, particularly the depth of myometrial invasion. It also includes the presence of tumor cells in lymphovascular spaces (LVSI), indicating potential for metastasis.",
+        "The appearance of the tumor edges, which can be infiltrative (irregular, spreading into surrounding tissue) or pushing (smooth, well-defined borders). Irregular, jagged margins suggest aggressive growth.",
+        "Areas of dead (necrotic) tumor cells within the tissue. Necrosis often appears as regions lacking viable cells and can indicate rapid tumor growth outpacing its blood supply.",
+        "The presence and density of inflammatory cells (e.g., lymphocytes, macrophages) within and around the tumor. ",
+        "Changes in the supportive tissue (stroma) surrounding the tumor, including desmoplasia (dense fibrous tissue response).",
+        "Areas within the tumor where cells show squamous (flat, scale-like) characteristics. Squamous differentiation can impact the behavior and classification of the tumor.",
+        "The variability in cellular and structural characteristics within different areas of the tumor. High heterogeneity indicates diverse cell populations, often associated with more aggressive behavior and resistance to treatment."
+    ]
+}

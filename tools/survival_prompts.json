@@ -1,0 +1,35 @@
+{
+	"context_templates": [
+		"a histopathology image suggesting",
+		"a histopathology image associated with",
+		"an H&E stained image suggesting",
+		"an H&E stained image associated with",
+		"the cancer prognosis reflected in the pathology image is"
+	],
+	"class_names": {
+		"0": [
+			"a very poor prognosis", 
+			"a least favorable prognosis", 
+			"a very shot survival",
+			"a very poor survival"
+		],
+		"1": [
+			"a poor prognosis", 
+			"a favorable prognosis", 
+			"a shot survival",
+			"a poor survival"
+		],
+		"2": [
+			"a good prognosis", 
+			"a more favorable prognosis", 
+			"a long survival",
+			"a good survival"
+		],
+		"3": [
+			"a very good prognosis", 
+			"a most favorable prognosis",
+			"a very long survival",
+			"a very good survival"
+		]
+	}
+}
