@@ -2,9 +2,9 @@
 
 *On updating*
 
- [[arXiv Preprint]](https://arxiv.org/abs/2409.09369) | [[VLSA Walkthrough]](https://github.com/liupei101/VLSA?tab=readme-ov-file#vlsa-walkthrough) | [[Awesome VLM Papers]](https://github.com/liupei101/VLSA?tab=readme-ov-file#-awesome-vlm-papers) | [[WSI Preprocessing]](https://github.com/liupei101/VLSA?tab=readme-ov-file#wsi-preprocessing) | [[Citation]](https://github.com/liupei101/VLSA?tab=readme-ov-file#-citation)
+[[Preprint]](https://arxiv.org/abs/2409.09369) | [[VLSA Walkthrough]](https://github.com/liupei101/VLSA?tab=readme-ov-file#vlsa-walkthrough) | [[Awesome Papers of Pathology VLMs]](https://github.com/liupei101/VLSA?tab=readme-ov-file#-awesome-papers-of-pathology-vlms) | [[Zhihu (中文)]](https://zhuanlan.zhihu.com/p/721597334) | [[WSI Preprocessing]](https://github.com/liupei101/VLSA?tab=readme-ov-file#wsi-preprocessing) | [[Citation]](https://github.com/liupei101/VLSA?tab=readme-ov-file#-citation)
 
-**Abstract**: Histopathology Whole-Slide Images (WSIs) provide an important tool to assess cancer prognosis in computational pathology (CPATH). While existing survival analysis (SA) approaches have made exciting progress, they are generally limited to adopting highly-expressive architectures and only coarse-grained patient-level labels to learn prognostic visual representations from gigapixel WSIs. Such learning paradigm suffers from important performance bottlenecks, when facing present scarce training data and standard multi-instance learning (MIL) framework in CPATH. To break through it, this paper, for the first time, proposes a new Vision-Language-based SA (**VLSA**) paradigm. Concretely, (1) VLSA is driven by pathology VL foundation models. It no longer relies on high-capability networks and shows the advantage of *data efficiency*. (2) In vision-end, VLSA encodes prognostic language prior and then employs it as *auxiliary signals* to guide the aggregating of prognostic visual features at instance level, thereby compensating for the weak supervision in MIL. Moreover, given the characteristics of SA, we propose i) *ordinal survival prompt learning* to transform continuous survival labels into textual prompts; and ii) *ordinal incidence function* as prediction target to make SA compatible with VL-based prediction. VLSA's predictions can be interpreted intuitively by our Shapley values-based method. The extensive experiments on five datasets confirm the effectiveness of our scheme. Our VLSA could pave a new way for SA in CPATH by offering weakly-supervised MIL an effective means to learn valuable prognostic clues from gigapixel WSIs.
+**Abstract**: Histopathology Whole-Slide Images (WSIs) provide an important tool to assess cancer prognosis in computational pathology (CPATH). While existing survival analysis (SA) approaches have made exciting progress, they are generally limited to adopting highly-expressive architectures and only coarse-grained patient-level labels to learn prognostic visual representations from gigapixel WSIs. Such learning paradigm suffers from important performance bottlenecks, when facing present scarce training data and standard multi-instance learning (MIL) framework in CPATH. To overcome it, this paper, for the first time, proposes a new Vision-Language-based SA (**VLSA**) paradigm. Concretely, (1) VLSA is driven by pathology VL foundation models. It no longer relies on high-capability networks and shows the advantage of *data efficiency*. (2) In vision-end, VLSA encodes prognostic language prior and then employs it as *auxiliary signals* to guide the aggregating of prognostic visual features at instance level, thereby compensating for the weak supervision in MIL. Moreover, given the characteristics of SA, we propose i) *ordinal survival prompt learning* to transform continuous survival labels into textual prompts; and ii) *ordinal incidence function* as prediction target to make SA compatible with VL-based prediction. Notably, VLSA's predictions can be interpreted intuitively by our Shapley values-based method. The extensive experiments on five datasets confirm the effectiveness of our scheme. Our VLSA could pave a new way for SA in CPATH by offering weakly-supervised MIL an effective means to learn valuable prognostic clues from gigapixel WSIs.
 
 <!-- Insert a pipeline of your algorithm here if got one -->
 <div align="center">
@@ -19,22 +19,29 @@
 
 ## VLSA Walkthrough
 
-*in progress*
+*under preparation*
 
 ## 👩‍💻 Running the Code
 
-Using the following command to load a experiment configuration and train the model (5-fold cross-validation):
+Use the following command to load an experiment configuration and train the VLSA model (5-fold cross-validation):
 ```bash
 python3 main.py --config config/IFMLE/tcga_blca/cfg_vlsa_conch.yaml --handler VLSA --multi_run
 ```
 
 All important arguments are explained in `config/IFMLE/tcga_blca/cfg_vlsa_conch.yaml`. 
 
-We advocate open-source research. Our training logs of `VLSA` can be accessed at [Google Drive](https://drive.google.com/drive/folders/18_N2_fNduFcXnxQOtbfP07zNJ91PU1hJ?usp=drive_link). 
+For the traditional SA models only using visual features, use this one:
+```bash
+python3 main.py --config config/IFMLE/tcga_blca/cfg_sa_base_conch.yaml --handler SA --multi_run
+```
 
-## 🔥 Awesome VLM Papers
+## Training Logs
 
-**Vision-Language Foundation Models for Computational Pathology**:
+We advocate open-source research. Our full training logs for `VLSA` models can be accessed at [Google Drive](https://drive.google.com/drive/folders/18_N2_fNduFcXnxQOtbfP07zNJ91PU1hJ?usp=drive_link). 
+
+## 🔥 Awesome Papers of Pathology VLMs
+
+**Foundational VLMs for computational pathology**:
 
 | Model          | Architecture | Paper             | Code            | Data   |
 | :------------- | :---------------- | :---------------- | :-------------- | :----- |
@@ -43,7 +50,7 @@ We advocate open-source research. Our training logs of `VLSA` can be accessed at
 | CONCH (NatMed'24) | [CoCa](https://arxiv.org/pdf/2205.01917) | [A Vision-Language Foundation Model for Computational Pathology](https://www.nature.com/articles/s41591-024-02856-4) | [Github](https://github.com/mahmoodlab/CONCH) | over 1.17 million image-caption pairs  |
 | PathAlign (arXiv'24) | [BLIP-2](https://arxiv.org/abs/2301.12597) | [PathAlign: A vision-language model for whole slide images in histopathology](https://arxiv.org/abs/2406.19578) | -  |  over 350,000 WSIs and diagnostic text pairs |
 
-**WSI Classification or Survival Analysis with Vision-Language Models**:
+**VLM-driven computational pathology tasks**:
 
 | Model          | Subfield    | Paper             | Code            | Base   |
 | :------------- | :---------- | :---------------- | :-------------- | :----- |
@@ -60,6 +67,15 @@ We advocate open-source research. Our training logs of `VLSA` can be accessed at
 Following [CONCH](https://github.com/mahmoodlab/CONCH), we first divide each WSI into patches of 448 * 448 pixels at 20x magnification. Then we adopt the image encoder of CONCH to extract patch features.
 
 Our complete procedure in WSI preprocessing follows [Pipeline-Processing-TCGA-Slides-for-MIL](https://github.com/liupei101/Pipeline-Processing-TCGA-Slides-for-MIL). You could move to it for a detailed tutorial.
+
+## Acknowledgements
+
+Some parts of codes in this repo are adapted from the following amazing works. We thank the authors and developers for their selfless contributions. 
+
+- [CONCH](https://github.com/mahmoodlab/CONCH): our VLSA is driven by this great pathology VLM.
+- [OrdinalCLIP](https://github.com/xk-huang/OrdinalCLIP): adapted for survival prompt learning.
+- [SurvivalEVAL](https://github.com/shi-ang/SurvivalEVAL): used for performance evaluation (D-cal and MAE computation).
+- [Patch-GCN](https://github.com/mahmoodlab/Patch-GCN): we follow its all data splits in 5-fold cross-validation.
 
 ## 📝 Citation
 
