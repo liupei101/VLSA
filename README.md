@@ -14,29 +14,29 @@
 ---
 
 📚 Recent updates:
-- 24/10/07: add [Notebook - VLSA Walkthrough](https://github.com/liupei101/VLSA/notebook/VLSA-Walkthrough.ipynb)
+- 24/10/07: add the [Notebook - VLSA Walkthrough](https://github.com/liupei101/VLSA/notebook/VLSA-Walkthrough.ipynb)
 - 24/09/24: codes & papers are live
 - 24/09/10: release VLSA
 
 ## VLSA Walkthrough
 
-Please refer to [Notebook - VLSA Walkthrough](https://github.com/liupei101/VLSA/notebook/VLSA-Walkthrough.ipynb). It provides the detail of
-- individual incidence function prediction in VLSA models
+Please refer to our [Notebook - VLSA Walkthrough](https://github.com/liupei101/VLSA/notebook/VLSA-Walkthrough.ipynb). It provides the detail of
+- individual incidence function prediction in VLSA models;
 - and prediction interpretation using our Shapley values-based method.
 
 ## 👩‍💻 Running the Code
 
-### pre-requisites
+### Pre-requisites
 
 All experiments are run on a machine with
 - one NVIDIA GeForce RTX 3090 GPU
 - python 3.8 and pytorch==1.11.0+cu113
 
-For `pip` or `conda` users, full requirements are provided in [requirements.txt](https://github.com/liupei101/VLSA/requirements.txt).
+Detailed package requirements:
+- for `pip` or `conda` users, full requirements are provided in [requirements.txt](https://github.com/liupei101/VLSA/requirements.txt).
+- for `Docker` users, you could use our base Docker image via `docker pull yuukilp/deepath:py38-torch1.11.0-cuda11.3-cudnn8-devel` and then install additional essential python packages (see [requirements.txt](https://github.com/liupei101/VLSA/requirements.txt)) in the container.
 
-For `Docker` users, you could use our base Docker image via `docker pull yuukilp/deepath:py38-torch1.11.0-cuda11.3-cudnn8-devel` and then install additional essential python packages (see [requirements.txt](https://github.com/liupei101/VLSA/requirements.txt)) in the running container.
-
-### training models 
+### Training models 
 
 Use the following command to load an experiment configuration and train the VLSA model (5-fold cross-validation):
 ```bash
