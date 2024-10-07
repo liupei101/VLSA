@@ -33,8 +33,8 @@ All experiments are run on a machine with
 - python 3.8 and pytorch==1.11.0+cu113
 
 Detailed package requirements:
-- for `pip` or `conda` users, full requirements are provided in [requirements.txt](https://github.com/liupei101/VLSA/requirements.txt).
-- for `Docker` users, you could use our base Docker image via `docker pull yuukilp/deepath:py38-torch1.11.0-cuda11.3-cudnn8-devel` and then install additional essential python packages (see [requirements.txt](https://github.com/liupei101/VLSA/requirements.txt)) in the container.
+- for `pip` or `conda` users, full requirements are provided in [requirements.txt](https://github.com/liupei101/VLSA/blob/main/requirements.txt).
+- for `Docker` users, you could use our base Docker image via `docker pull yuukilp/deepath:py38-torch1.11.0-cuda11.3-cudnn8-devel` and then install additional essential python packages (see [requirements.txt](https://github.com/liupei101/VLSA/blob/main/requirements.txt)) in the container.
 
 ### Training models 
 
