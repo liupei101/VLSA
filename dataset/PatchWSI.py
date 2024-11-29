@@ -265,10 +265,10 @@ class FewShot_WSIPatchSurv(Dataset):
         self.uid = dataset.uid
         self.meta_data = dataset.meta_data
 
-        uncensored_time_bins = calculate_uncensored_time_bins(self.uid, self.meta_data, ret_continuous_time=False)
+        self.uncensored_time_bins = calculate_uncensored_time_bins(self.uid, self.meta_data, ret_continuous_time=False)
         event_labels = [dataset.pid2label[u][1] for u in self.uid] # label = ['t', 'e']
 
-        self.few_shot_idx = self.get_few_shot_samples(uncensored_time_bins, event_labels, seed=seed)
+        self.few_shot_idx = self.get_few_shot_samples(self.uncensored_time_bins, event_labels, seed=seed)
 
         if num_shot > 0:
             print("[WSIPatchSurv] initialized {}-shot dataset with seed = {}.".format(num_shot, seed))
@@ -281,7 +281,7 @@ class FewShot_WSIPatchSurv(Dataset):
         if not isinstance(event_labels, np.ndarray):
             event_labels = np.array(event_labels)
 
-        time_bins = np.unique(discrete_time_labels)
+        time_bins = np.array([_ for _ in range(self.meta_data.num_bins)])
         seed_rng = np.random.default_rng(seed)
 
         is_valid_sampling = False # the samples must have as least one uncensored patient
@@ -299,7 +299,7 @@ class FewShot_WSIPatchSurv(Dataset):
                         print(f"[warning] only select {num_sample} samples from the {t}-th time for {self.num_shot}-shot.")
                 few_shot_idx = few_shot_idx + idx_of_t_few_shot
             cnt_event = event_labels[few_shot_idx].sum()
-            is_valid_sampling = cnt_event >= 1 and cnt_event <= len(few_shot_idx) - 1
+            is_valid_sampling = cnt_event >= 1
 
         if preserve_order:
             few_shot_idx.sort()
