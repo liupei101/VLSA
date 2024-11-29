@@ -299,7 +299,7 @@ class FewShot_WSIPatchSurv(Dataset):
                         print(f"[warning] only select {num_sample} samples from the {t}-th time for {self.num_shot}-shot.")
                 few_shot_idx = few_shot_idx + idx_of_t_few_shot
             cnt_event = event_labels[few_shot_idx].sum()
-            is_valid_sampling = cnt_event >= 1
+            is_valid_sampling = cnt_event >= 1 and cnt_event < len(few_shot_idx)
 
         if preserve_order:
             few_shot_idx.sort()

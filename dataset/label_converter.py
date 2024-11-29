@@ -4,6 +4,7 @@ import math
 
 from eval.SurvivalEVAL.Evaluations.MeanError import get_best_guess_from_training_data
 
+EPS = 1e-5
 
 def calculate_uncensored_time_bins(patient_ids, meta_data, ret_continuous_time=False):
     actual_label = meta_data.get_patient_data(patient_ids, ret_columns=['t', 'e'])
@@ -20,6 +21,9 @@ def calculate_uncensored_time_bins(patient_ids, meta_data, ret_continuous_time=F
             num_bins=None, use_quantiles=False, max_time=meta_data.max_t
         )
 
+    # prevent from NAN output by pd.cut
+    actual_label['uncensored_t'].clip(time_bins[0] + EPS, time_bins[-1] - EPS, inplace=True)
+    
     uncensored_time_bins = pd.cut(
         actual_label['uncensored_t'], bins=time_bins, retbins=False, 
         labels=False, right=False, include_lowest=True
