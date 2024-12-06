@@ -67,8 +67,7 @@ We advocate open-source research. Our full training logs for `VLSA` models can b
 | CONCH (NatMed'24) | [CoCa](https://arxiv.org/pdf/2205.01917) | [A Vision-Language Foundation Model for Computational Pathology](https://www.nature.com/articles/s41591-024-02856-4) | [Github](https://github.com/mahmoodlab/CONCH) | over 1.17 million image-caption pairs  |
 | CPLIP (CVPR'24)     | [CLIP](https://github.com/openai/CLIP) | [CPLIP: Zero-Shot Learning for Histopathology with Comprehensive Vision-Language Alignment](https://openaccess.thecvf.com/content/CVPR2024/papers/Javed_CPLIP_Zero-Shot_Learning_for_Histopathology_with_Comprehensive_Vision-Language_Alignment_CVPR_2024_paper.pdf) | [Github](https://github.com/iyyakuttiiyappan/CPLIP)            | Many-to-many VL alignment on ARCH dataset |
 | PathAlign (arXiv'24) | [BLIP-2](https://arxiv.org/abs/2301.12597) | [PathAlign: A vision-language model for whole slide images in histopathology](https://arxiv.org/abs/2406.19578) | -  |  over 350,000 WSIs and diagnostic text pairs |
-| TITAN (arXiv'24) | [CoCa](https://arxiv.org/pdf/2205.01917) | [Multimodal Whole Slide Foundation Model for Pathology
-](https://arxiv.org/abs/2411.19666) | -  |  Slide-level vision-language alignment |
+| TITAN (arXiv'24) | [CoCa](https://arxiv.org/pdf/2205.01917) | [Multimodal Whole Slide Foundation Model for Pathology](https://arxiv.org/abs/2411.19666) | [Github](https://github.com/mahmoodlab/TITAN)  |  Slide-level vision-language alignment |
 
 **VLM-driven computational pathology tasks**:
 
