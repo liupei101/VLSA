@@ -31,7 +31,7 @@ Please refer to our [Notebook - VLSA Walkthrough](https://github.com/liupei101/V
 ### Pre-requisites
 
 All experiments are run on a machine with
-- one NVIDIA GeForce RTX 3090 GPU
+- two NVIDIA GeForce RTX 3090 GPUs
 - python 3.8 and pytorch==1.11.0+cu113
 
 Detailed package requirements:
@@ -67,6 +67,8 @@ We advocate open-source research. Our full training logs for `VLSA` models can b
 | CONCH (NatMed'24) | [CoCa](https://arxiv.org/pdf/2205.01917) | [A Vision-Language Foundation Model for Computational Pathology](https://www.nature.com/articles/s41591-024-02856-4) | [Github](https://github.com/mahmoodlab/CONCH) | over 1.17 million image-caption pairs  |
 | CPLIP (CVPR'24)     | [CLIP](https://github.com/openai/CLIP) | [CPLIP: Zero-Shot Learning for Histopathology with Comprehensive Vision-Language Alignment](https://openaccess.thecvf.com/content/CVPR2024/papers/Javed_CPLIP_Zero-Shot_Learning_for_Histopathology_with_Comprehensive_Vision-Language_Alignment_CVPR_2024_paper.pdf) | [Github](https://github.com/iyyakuttiiyappan/CPLIP)            | Many-to-many VL alignment on ARCH dataset |
 | PathAlign (arXiv'24) | [BLIP-2](https://arxiv.org/abs/2301.12597) | [PathAlign: A vision-language model for whole slide images in histopathology](https://arxiv.org/abs/2406.19578) | -  |  over 350,000 WSIs and diagnostic text pairs |
+| TITAN (arXiv'24) | [CoCa](https://arxiv.org/pdf/2205.01917) | [Multimodal Whole Slide Foundation Model for Pathology
+](https://arxiv.org/abs/2411.19666) | -  |  Slide-level vision-language alignment |
 
 **VLM-driven computational pathology tasks**:
 
@@ -75,6 +77,7 @@ We advocate open-source research. Our full training logs for `VLSA` models can b
 | TOP (NeurIPS'23)      | WSI Classification    | [The rise of ai language pathologists: Exploring two-level prompt learning for few-shot weakly-supervised whole slide image classification](https://papers.nips.cc/paper_files/paper/2023/hash/d599b81036fd1a3b3949b7d444f31082-Abstract-Conference.html) | [Github](https://github.com/miccaiif/TOP)            | Few-shot WSI classification   |
 | FiVE (CVPR'24)     | WSI Classification    | [Generalizable whole slide image classification with fine-grained visual-semantic interaction](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Generalizable_Whole_Slide_Image_Classification_with_Fine-Grained_Visual-Semantic_Interaction_CVPR_2024_paper.pdf) | [Github](https://github.com/ls1rius/WSI_FiVE)            | VLM pretraining for WSI classification  |
 | ViLa-MIL (CVPR'24)         | WSI Classification   | [Vila-mil: Dual-scale vision language multiple instance learning for whole slide image classification](https://openaccess.thecvf.com/content/CVPR2024/papers/Shi_ViLa-MIL_Dual-scale_Vision-Language_Multiple_Instance_Learning_for_Whole_Slide_Image_CVPR_2024_paper.pdf) | [Github](https://github.com/Jiangbo-Shi/ViLa-MIL)                 | Dual-scale features for WSI classification |
+| CoD-MIL (TMI'24)         | WSI Classification   | [CoD-MIL: Chain-of-Diagnosis Prompting Multiple Instance Learning for Whole Slide Image Classiffcation](https://ieeexplore.ieee.org/document/10731873) | Github | An improved version of ViLa-MIL |
 | VLSA (arXiv'24)         | WSI Survival Analysis | [Interpretable Vision-Language Survival Analysis with Ordinal Inductive Bias for Computational Pathology](https://arxiv.org/abs/2409.09369) | [Github](https://github.com/liupei101/VLSA)  | VLM-driven vision-language survival analysis |
 | QPMIL-VL (arXiv'24)         | WSI Classification | [Queryable Prototype Multiple Instance Learning with Vision-Language Models for Incremental Whole Slide Image Classification](https://arxiv.org/abs/2410.10573) | [Github](https://github.com/UESTC-nnLab/QPMIL-VL)  | VLM-driven Incremental Learning for WSIs |
 
