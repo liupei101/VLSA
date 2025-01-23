@@ -1,6 +1,6 @@
 # VLSA: Interpretable Vision-Language Survival Analysis with Ordinal Inductive Bias for Computational Pathology
 
-[[Preprint]](https://arxiv.org/abs/2409.09369) | [[VLSA Walkthrough]](https://github.com/liupei101/VLSA?tab=readme-ov-file#vlsa-walkthrough) | [[Awesome Papers of Pathology VLMs]](https://github.com/liupei101/VLSA?tab=readme-ov-file#-awesome-papers-of-pathology-vlms) | [[Zhihu (中文)]](https://zhuanlan.zhihu.com/p/721597334) | [[WSI Preprocessing]](https://github.com/liupei101/VLSA?tab=readme-ov-file#wsi-preprocessing) | [[Acknowledgements]](https://github.com/liupei101/VLSA?tab=readme-ov-file#acknowledgements) | [[Citation]](https://github.com/liupei101/VLSA?tab=readme-ov-file#-citation)
+[[Paper]](https://openreview.net/pdf?id=trj2Jq8riA) | [[VLSA Walkthrough]](https://github.com/liupei101/VLSA?tab=readme-ov-file#vlsa-walkthrough) | [[Awesome Papers of Pathology VLMs]](https://github.com/liupei101/VLSA?tab=readme-ov-file#-awesome-papers-of-pathology-vlms) | [[Zhihu (中文)]](https://zhuanlan.zhihu.com/p/721597334) | [[WSI Preprocessing]](https://github.com/liupei101/VLSA?tab=readme-ov-file#wsi-preprocessing) | [[Acknowledgements]](https://github.com/liupei101/VLSA?tab=readme-ov-file#acknowledgements) | [[Citation]](https://github.com/liupei101/VLSA?tab=readme-ov-file#-citation)
 
 <img src="docs/VLSA.webp" width="300px" align="right"/>
 
@@ -13,12 +13,13 @@
 
 ---
 
+*On updating. Stay tuned.*
+
 📚 Recent updates:
+- 25/01/23: VLSA is accepted to ICLR 2025
 - 24/10/07: add the [Notebook - VLSA Walkthrough](https://github.com/liupei101/VLSA/blob/main/notebook/VLSA-Walkthrough.ipynb)
 - 24/09/24: codes & papers are live
 - 24/09/10: release VLSA
-
-*On updating. Stay tuned.*
 
 ## VLSA Walkthrough
 
@@ -77,8 +78,8 @@ We advocate open-source research. Our full training logs for `VLSA` models can b
 | FiVE (CVPR'24)     | WSI Classification    | [Generalizable whole slide image classification with fine-grained visual-semantic interaction](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Generalizable_Whole_Slide_Image_Classification_with_Fine-Grained_Visual-Semantic_Interaction_CVPR_2024_paper.pdf) | [Github](https://github.com/ls1rius/WSI_FiVE)            | VLM pretraining for WSI classification  |
 | ViLa-MIL (CVPR'24)         | WSI Classification   | [Vila-mil: Dual-scale vision language multiple instance learning for whole slide image classification](https://openaccess.thecvf.com/content/CVPR2024/papers/Shi_ViLa-MIL_Dual-scale_Vision-Language_Multiple_Instance_Learning_for_Whole_Slide_Image_CVPR_2024_paper.pdf) | [Github](https://github.com/Jiangbo-Shi/ViLa-MIL)                 | Dual-scale features for WSI classification |
 | CoD-MIL (TMI'24)         | WSI Classification   | [CoD-MIL: Chain-of-Diagnosis Prompting Multiple Instance Learning for Whole Slide Image Classiffcation](https://ieeexplore.ieee.org/document/10731873) | Github | An improved version of ViLa-MIL |
-| VLSA (arXiv'24)         | WSI Survival Analysis | [Interpretable Vision-Language Survival Analysis with Ordinal Inductive Bias for Computational Pathology](https://arxiv.org/abs/2409.09369) | [Github](https://github.com/liupei101/VLSA)  | VLM-driven vision-language survival analysis |
-| QPMIL-VL (arXiv'24)         | WSI Classification | [Queryable Prototype Multiple Instance Learning with Vision-Language Models for Incremental Whole Slide Image Classification](https://arxiv.org/abs/2410.10573) | [Github](https://github.com/UESTC-nnLab/QPMIL-VL)  | VLM-driven Incremental Learning for WSIs |
+| VLSA (ICLR'25)         | WSI Survival Analysis | [Interpretable Vision-Language Survival Analysis with Ordinal Inductive Bias for Computational Pathology](https://openreview.net/pdf?id=trj2Jq8riA) | [Github](https://github.com/liupei101/VLSA)  | VLM-driven vision-language survival analysis |
+| QPMIL-VL (AAAI'25)         | WSI Classification | [Queryable Prototype Multiple Instance Learning with Vision-Language Models for Incremental Whole Slide Image Classification](https://arxiv.org/abs/2410.10573) | [Github](https://github.com/can-can-ya/QPMIL-VL)  | VLM-driven Incremental Learning for WSIs |
 
 **NOTE**: please open *a new PR* if you want to add your work into this table.
 
@@ -105,13 +106,11 @@ Some parts of codes in this repo are adapted from the following amazing works. W
 
 If you find this work helps your research, please consider citing our paper:
 ```txt
-@misc{liu2024interpretablevisionlanguagesurvivalanalysis,
-    title={Interpretable Vision-Language Survival Analysis with Ordinal Inductive Bias for Computational Pathology}, 
-    author={Pei Liu and Luping Ji and Jiaxiang Gou and Bo Fu and Mao Ye},
-    year={2024},
-    eprint={2409.09369},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV},
-    url={https://arxiv.org/abs/2409.09369}, 
+@inproceedings{liu2025vlsa,
+  title={Interpretable Vision-Language Survival Analysis with Ordinal Inductive Bias for Computational Pathology},
+  author={Pei Liu and Luping Ji and Jiaxiang Gou and Bo Fu and Mao Ye},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://openreview.net/forum?id=trj2Jq8riA},
 }
 ```
