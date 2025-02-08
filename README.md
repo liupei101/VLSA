@@ -16,6 +16,7 @@
 *On updating. Stay tuned.*
 
 📚 Recent updates:
+- 25/02/08: upload the patch features (31.86G in files) used in VLSA; you can download them from [here](https://pan.baidu.com/s/1a8ZYQJAYfl2zw7HcuaI4ig?pwd=6f4s).
 - 25/01/23: VLSA is accepted to ICLR 2025
 - 24/10/07: add the [Notebook - VLSA Walkthrough](https://github.com/liupei101/VLSA/blob/main/notebook/VLSA-Walkthrough.ipynb)
 - 24/09/24: codes & papers are live
@@ -87,7 +88,9 @@ We advocate open-source research. Our full training logs for `VLSA` models can b
 
 Following [CONCH](https://github.com/mahmoodlab/CONCH), we first divide each WSI into patches of 448 * 448 pixels at 20x magnification. Then we adopt the image encoder of CONCH to extract patch features.
 
-Our complete procedure in WSI preprocessing follows [Pipeline-Processing-TCGA-Slides-for-MIL](https://github.com/liupei101/Pipeline-Processing-TCGA-Slides-for-MIL). You could move to it for a detailed tutorial.
+Our complete procedure in WSI preprocessing follows [Pipeline-Processing-TCGA-Slides-for-MIL](https://github.com/liupei101/Pipeline-Processing-TCGA-Slides-for-MIL). You could 
+- download the patch features used in the experiment from [here](https://pan.baidu.com/s/1a8ZYQJAYfl2zw7HcuaI4ig?pwd=6f4s),
+- or move to it for a detailed tutorial and try it on your own dataset.
 
 ## Acknowledgements
 
