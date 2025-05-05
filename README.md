@@ -81,6 +81,7 @@ We advocate open-source research. Our full training logs for `VLSA` models can b
 | CoD-MIL (TMI'24)         | WSI Classification   | [CoD-MIL: Chain-of-Diagnosis Prompting Multiple Instance Learning for Whole Slide Image Classiffcation](https://ieeexplore.ieee.org/document/10731873) | Github | An improved version of ViLa-MIL |
 | VLSA (ICLR'25)         | WSI Survival Analysis | [Interpretable Vision-Language Survival Analysis with Ordinal Inductive Bias for Computational Pathology](https://openreview.net/pdf?id=trj2Jq8riA) | [Github](https://github.com/liupei101/VLSA)  | VLM-driven vision-language survival analysis |
 | QPMIL-VL (AAAI'25)         | WSI Classification | [Queryable Prototype Multiple Instance Learning with Vision-Language Models for Incremental Whole Slide Image Classification](https://arxiv.org/abs/2410.10573) | [Github](https://github.com/can-can-ya/QPMIL-VL)  | VLM-driven Incremental Learning for WSIs |
+| MSCPT (TMI'25)         | WSI Classification | [MSCPT: Few-shot Whole Slide Image Classification with Multi-scale and Context-focused Prompt Tuning](https://ieeexplore.ieee.org/abstract/document/10979677) | [Github](https://github.com/Hanminghao/MSCPT)  | Multimodal Prompt Tuning for WSI |
 
 **NOTE**: please open *a new PR* if you want to add your work into this table.
 
